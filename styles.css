@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #005994;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+fieldset {
+    color: white;
+    box-shadow: 20px 40px 80px rgba(0, 0, 0, 0.2);
+    border-radius: 30px 30px;
+    border: 1px solid #000000;
+    text-align: center;
+    background-color: #002652;
+    line-height: normal;
+}   
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+    width: 250px;
+  }
+
+.grupo {
+    margin-bottom: 20px;
+  }
+
+input[type="text"] {
+    align-items: center;
+    border-radius: 10px 10px;
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+  }
+
+button {
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+ 
