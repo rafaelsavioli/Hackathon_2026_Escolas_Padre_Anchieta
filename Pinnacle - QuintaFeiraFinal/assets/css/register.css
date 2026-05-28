@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 35, 255, 0.3) transparent;
+}
+
+html::-webkit-scrollbar{
+    width: 5px;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 35, 255, 0.3);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(0, 35, 255, 0.5);
+}
+
+html::-webkit-scrollbar-button{
+    display: none;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #e8eeff 0%, #ffffff 50%, #e8eeff 100%);
+    position: relative;
+}
+
+.bgBola{
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.bgBola1{
+    width: 300px;
+    height: 300px;
+    background-color: #0023ff;
+    top: -80px;
+    left: -100px;
+    animation: flutuar1 8s ease-in-out infinite;
+}
+
+.bgBola2{
+    width: 200px;
+    height: 200px;
+    background-color: #0023ff;
+    bottom: -60px;
+    right: -60px;
+    animation: flutuar2 10s ease-in-out infinite;
+}
+
+.bgBola3{
+    width: 150px;
+    height: 150px;
+    background-color: #0023ff;
+    top: 50%;
+    right: 10%;
+    animation: flutuar3 7s ease-in-out infinite;
+}
+
+.bgBola4{
+    width: 100px;
+    height: 100px;
+    background-color: #0023ff;
+    bottom: 20%;
+    left: 10%;
+    animation: flutuar1 9s ease-in-out infinite reverse;
+}
+
+@keyframes flutuar1{
+    0%, 100%{ transform: translate(0, 0) scale(1); }
+    50%{ transform: translate(40px, 30px) scale(1.1); }
+}
+
+@keyframes flutuar2{
+    0%, 100%{ transform: translate(0, 0) scale(1); }
+    50%{ transform: translate(-50px, -40px) scale(1.15); }
+}
+
+@keyframes flutuar3{
+    0%, 100%{ transform: translate(0, 0) scale(1); }
+    50%{ transform: translate(-30px, 50px) scale(0.9); }
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: #0023ff;
+    width: 380px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.btnVoltar{
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+    align-self: flex-start;
+    margin: 20px 0 0 20px;
+    opacity: 0.7;
+    transition: 0.3s ease;
+}
+
+.btnVoltar:hover{
+    opacity: 1;
+    transform: translateX(-3px);
+}
+
+.tituloUser{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputUser{
+    width: 280px;
+    height: 28px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.inputRA {
+    width: 280px;
+    height: 28px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.inputRA:hover {
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.inputUser:hover {
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.tituloSenha{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputSenha{
+    width: 280px;
+    height: 28px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.inputSenha:hover {
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.btnEntrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #0023ff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    width: 150px;
+    height: 45px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btnEntrar:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+.btnGoogle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    width: 60px;
+    height: 45px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btnGoogle:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    transform: scale(1.05);
+}
+
+.btnGoogle img{
+    width: 24px;
+    height: 24px;
+}
+
+.botoes{
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.divisao{
+    width: 300px;
+    height: 2px;
+    background-color: #fdfdfd;
+    margin-top: 30px;
+}
+
+.inscrever{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.link{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.link:hover {
+    transition: 0.5s ease;
+    transform: scale(1.1); 
+}
+
+.tituloConfirmarSenha{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tituloTipo{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.selectCustom{
+    position: relative;
+    width: 280px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.selectBtn{
+    width: 100%;
+    height: 28px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.selectBtn .seta{
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+
+.selectCustom.open .selectBtn .seta{
+    transform: rotate(180deg);
+}
+
+.selectOptions{
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    list-style: none;
+    padding: 6px 0;
+    margin: 0;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.selectOptions.show{
+    display: block;
+}
+
+.selectOption{
+    padding: 8px 16px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    margin: 2px 6px;
+}
+
+.selectOption:hover{
+    background-color: #e8e8ff;
+}
+
+.selectOption.selected{
+    background-color: #0023ff;
+    color: #ffffff;
+}
+
+.tituloDataNascimento, .tituloInstituicao{
+    color: #fdfdfd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.inputData{
+    width: 280px;
+    height: 28px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 16px;
+    padding-left: 12px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.inputData:hover{
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.inputInstituicao{
+    width: 280px;
+    height: 28px;
+    border-radius: 20px;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 20px;
+    padding-left: 12px;
+    box-sizing: border-box;
+}
+
+.inputInstituicao:hover{
+    transition: 0.5s ease;
+    transform: scale(1.05);
+}
+
+.msgErro{
+    color: #ff4444;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    min-height: 20px;
+    margin-top: 10px;
+}
