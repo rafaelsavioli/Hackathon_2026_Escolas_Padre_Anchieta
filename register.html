@@ -1,28 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="styles2.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Registre-se</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+
+    <link rel="stylesheet" href="styles2.css">
 </head>
+
 <body>
-    <img src="logo.jpg" alt="Logo" class="img-canto">
+
+    <!-- Logo -->
+    <img src="logo.pinnacle.png" alt="Logo" class="logo">
+
+    <!-- Formulário -->
     <fieldset>
+
         <h1>Criar conta</h1>
-            <label for="nome">Nome de usuario</label>
-                <input id="nome" type="text" placeholder="Digite Seu nome de usuário">
-                    <br>
-                    <br>
-            <label for="Senha"><p>Digite sua senha </p></label>
-                <input id="senha" type="password" placeholder="Digite sua senha">
-                    <br>
-                    <br>
-            <label for="confirmesuasenha"><p>Confirme sua senha</p></label>
-                <input id="senha" type="password" placeholder="Confirme sua senha">
-                    <br>
-                    <br>
-                <input type="submit" placeholder="Confirmar">
-     </fieldset>
+
+        <form>
+
+            <label for="nome">Nome de usuário:</label>
+            <input type="text" id="nome">
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha">
+
+            <label for="confirmar">Confirmar senha:</label>
+            <input type="password" id="confirmar">
+
+            <div class="linha"></div>
+
+            <div class="botoes">
+
+                <button class="google">
+                    <img src="./google.jpg" alt="Google">
+                </button>
+
+                <button type="submit" class="cadastro">
+                    Cadastrar-se
+                </button>
+
+            </div>
+
+            <p>
+                Já possui uma conta?
+                <a href="#">Entre!</a>
+            </p>
+
+        </form>
+
+    </fieldset>
+
 </body>
 </html>
