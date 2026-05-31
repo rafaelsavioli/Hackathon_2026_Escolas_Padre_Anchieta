@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- ============================================
+     register.html — Tela de cadastro
+     ============================================ -->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <div class="bgBola bgBola1"></div>
+    <div class="bgBola bgBola2"></div>
+    <div class="bgBola bgBola3"></div>
+    <div class="bgBola bgBola4"></div>
+
+    <form method="POST" action="auth/register.php">
+    <div class="card">
+        <a href="index.html" class="btnVoltar">&larr; Voltar</a>
+        <h1 class="titulo">CRIAR CONTA</h1>
+        
+        <div class="usuario">
+        <label class="tituloUser">Nome de usuário:</label><br>
+        <input type="text" class="inputUser" name="usuario">
+        </div>
+
+        <div class="usuario">
+        <label class="tituloUser">RA:</label><br>
+        <input type="text" class="inputRA" name="ra">
+        </div>
+
+        <div class="senha">
+        <label class="tituloSenha">Senha:</label><br>
+        <input type="password" class="inputSenha" name="senha">
+        </div>
+
+        <div class="confirmarSenha">
+        <label class="tituloConfirmarSenha">Confirmar senha:</label><br>
+        <input type="password" class="inputSenha" name="confirmarSenha">
+        </div>
+
+        <div class="tipo">
+        <label class="tituloTipo">Tipo de conta:</label><br>
+        <div class="selectCustom">
+            <input type="hidden" name="tipo" id="tipoInput" value="aluno">
+            <div class="selectBtn" id="selectBtn">
+                <span>Aluno</span>
+                <svg class="seta" viewBox="0 0 12 12"><path fill="#0023ff" d="M6 8L1 3h10z"/></svg>
+            </div>
+            <ul class="selectOptions">
+                <li class="selectOption selected" data-value="aluno">Aluno</li>
+                <li class="selectOption" data-value="professor">Professor</li>
+            </ul>
+        </div>
+        </div>
+
+        <div class="camposProfessor" id="camposProfessor" style="display: none;">
+        <div class="dataNascimento">
+        <label class="tituloDataNascimento">Data de nascimento:</label><br>
+        <input type="date" class="inputData" name="data_nascimento">
+        </div>
+
+        <div class="instituicao">
+        <label class="tituloInstituicao">Instituição:</label><br>
+        <input type="text" class="inputInstituicao" name="instituicao">
+        </div>
+        </div>
+
+        <div class="divisao"></div>
+
+        <p class="msgErro" id="msgErro"></p>
+        
+        <div class="botoes">
+        <input type="submit" value="CADASTRAR-SE" class="btnEntrar">
+        </div>
+
+        <p class="inscrever">
+            Já possui uma conta?
+            <a href="login.html" class="link">Entre!</a>
+        </p>
+    </div>
+    </form>
+
+    <script src="assets/js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<!-- ============================================
+     quiz-player.html — Tela do jogo (fallback/standalone)
+     ============================================ -->
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Pinnacle Quiz Player</title>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="assets/css/quiz-player.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  </head>
+
+  <body>
+    <!-- ========================================
+         TOPBAR
+    ======================================== -->
+
+    <header class="topbar">
+      <div class="logo">
+        <a href="homepage.php">
+          <img
+            src="assets/img/Pinnacle - Logo.png"
+            alt="Pinnacle Logo"
+          />
+        </a>
+      </div>
+
+      <!-- USER MENU -->
+
+      <div class="user-menu">
+        <span class="account-type">
+          Tipo de conta:
+          <strong>Aluno</strong>
+        </span>
+
+        <button id="user-button" class="user-button">
+          <i class="bi bi-person-fill"></i>
+        </button>
+
+        <div id="user-dropdown" class="user-dropdown">
+          <a href="auth/logout.php">
+            <i class="bi bi-box-arrow-right"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================
+         MAIN
+    ======================================== -->
+
+    <main class="main">
+      <!-- HEADER -->
+
+      <section class="quiz-header">
+        <div class="quiz-info">
+          <h1 id="quiz-title">Carregando Quiz...</h1>
+
+          <span id="question-counter">
+            Pergunta 1 de 1
+          </span>
+        </div>
+
+        <!-- SCORE -->
+
+        <div class="score-box">
+          <i class="bi bi-trophy-fill"></i>
+
+          <span id="player-score">0 pts</span>
+        </div>
+
+        <!-- TIMER -->
+
+        <div class="timer-circle" id="timer-circle">
+          <span id="timer">20</span>
+        </div>
+      </section>
+
+      <!-- QUESTION -->
+
+      <section class="question-section">
+        <h2 class="question-title" id="question-title">
+          Pergunta
+        </h2>
+
+        <!-- IMAGE -->
+
+        <div
+          class="question-image hidden"
+          id="question-image-container"
+        >
+          <img
+            id="question-image"
+            alt="Imagem da pergunta"
+          />
+        </div>
+
+        <!-- ANSWERS -->
+
+        <div class="answers-grid">
+          <!-- RED -->
+
+          <button
+            class="answer-btn answer-red"
+            data-index="0"
+          >
+            <div class="answer-bar red"></div>
+
+            <div class="answer-content">
+              <span class="answer-letter">A</span>
+
+              <span class="answer-text"></span>
+            </div>
+          </button>
+
+          <!-- BLUE -->
+
+          <button
+            class="answer-btn answer-blue"
+            data-index="1"
+          >
+            <div class="answer-bar blue"></div>
+
+            <div class="answer-content">
+              <span class="answer-letter">B</span>
+
+              <span class="answer-text"></span>
+            </div>
+          </button>
+
+          <!-- YELLOW -->
+
+          <button
+            class="answer-btn answer-yellow"
+            data-index="2"
+          >
+            <div class="answer-bar yellow"></div>
+
+            <div class="answer-content">
+              <span class="answer-letter">C</span>
+
+              <span class="answer-text"></span>
+            </div>
+          </button>
+
+          <!-- GREEN -->
+
+          <button
+            class="answer-btn answer-green"
+            data-index="3"
+          >
+            <div class="answer-bar green"></div>
+
+            <div class="answer-content">
+              <span class="answer-letter">D</span>
+
+              <span class="answer-text"></span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+      <!-- FEEDBACK -->
+
+      <section
+        class="feedback-modal hidden"
+        id="feedback-modal"
+      >
+        <div class="feedback-content">
+          <div id="feedback-icon" class="feedback-icon">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+
+          <h2 id="feedback-title">
+            Resposta Correta!
+          </h2>
+
+          <p id="feedback-points">
+            +100 pontos
+          </p>
+
+          <button id="next-question-btn">
+            Próxima Pergunta
+          </button>
+        </div>
+      </section>
+
+      <!-- PROFESSOR QUIZ CONTROL -->
+      <section class="professor-quiz-bar hidden" id="professor-quiz-bar">
+        <div class="prof-quiz-content">
+          <div class="prof-info">
+            <i class="bi bi-people-fill"></i>
+            <span>Responderam:</span>
+            <strong id="prof-answer-count">0 / 0</strong>
+            <span id="prof-question-status" class="prof-status">Aguardando...</span>
+          </div>
+          <button id="prof-advance-btn" class="btn-advance" disabled>
+            <i class="bi bi-arrow-right-circle-fill"></i> Avançar Pergunta
+          </button>
+        </div>
+      </section>
+
+      <!-- WAITING ROOM -->
+
+      <section
+        class="waiting-room hidden"
+        id="waiting-room"
+      >
+        <div class="waiting-content">
+          <div class="waiting-spinner">
+            <i class="bi bi-hourglass-split"></i>
+          </div>
+
+          <h1>Aguardando o Professor</h1>
+
+          <p id="waiting-message">
+            O professor ainda não iniciou o quiz.
+            <br />
+            Prepare-se para responder rápido! 
+          </p>
+
+          <div class="waiting-stats">
+            <div class="stat">
+              <span class="label">Código:</span>
+              <span id="waiting-code" class="value">-</span>
+            </div>
+
+            <div class="stat">
+              <span class="label">Alunos Conectados:</span>
+              <span id="waiting-players" class="value">1</span>
+            </div>
+          </div>
+
+          <button class="exit-btn" onclick="exitQuiz()">
+            <i class="bi bi-box-arrow-left"></i> Sair
+          </button>
+        </div>
+      </section>
+
+      <!-- RANKING -->
+
+      <section
+        class="ranking-screen hidden"
+        id="ranking-screen"
+      >
+        <h1>Ranking Final</h1>
+
+        <div
+          class="ranking-podium"
+          id="ranking-podium"
+        ></div>
+
+        <button
+          class="play-again-btn"
+          onclick="location.href='homepage.php'"
+        >
+          Voltar ao inicio
+        </button>
+      </section>
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+
+    <footer class="footer">
+      <span>Pinnacle™</span>
+    </footer>
+
+    <!-- JS -->
+
+    <script src="assets/js/quiz-player.js"></script>
+  </body>
+</html>
