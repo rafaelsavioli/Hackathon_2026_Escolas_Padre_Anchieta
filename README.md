@@ -1,7 +1,5 @@
 # Pinnacle 🏔️
 
-> *"O topo é seu!"*
-
 Plataforma web de quizzes multiplayer em tempo real, inspirada no Kahoot!. Desenvolvida durante o Hackathon da Semana Técnica da **Escola Padre Anchieta** (2026).
 
 ---
