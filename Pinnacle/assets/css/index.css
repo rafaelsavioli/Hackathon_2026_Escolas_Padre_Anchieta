@@ -1,0 +1,244 @@
+/*
+========================================
+index.css
+Estilos da landing page (index.html)
+========================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 35, 255, 0.3) transparent;
+}
+
+html::-webkit-scrollbar{
+    width: 5px;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 35, 255, 0.3);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(0, 35, 255, 0.5);
+}
+
+html::-webkit-scrollbar-button{
+    display: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* HEADER */
+header{
+    background-color: #0023ff;
+    width: 100%;
+    height: 90px;
+    padding: 12px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 65px;
+    width: auto;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navLink{
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: 0.3s ease;
+}
+
+.navLink:hover{
+    background: rgba(255, 255, 255, 0.15);
+    transform: scale(1.05);
+}
+
+.btnEntrarHeader{
+    background-color: #ffffff;
+    color: #0023ff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.btnEntrarHeader:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 35, 255, 0.25);
+}
+
+/* HERO */
+.hero{
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    overflow: hidden;
+}
+
+.heroImg{
+    width: 100%;
+    height: 650px;
+    opacity: 0.8;
+}
+
+.heroImg img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.heroTexto{
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    max-width: 400px;
+}
+
+.heroTexto h1{
+    font-size: 55px;
+    font-weight: 800;
+    color: #0023ff;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.btnCadastrar{
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0023ff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 12px 35px;
+    border-radius: 25px;
+    border: 2px solid #0023ff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btnCadastrar:hover{
+    background-color: #0023ff;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 35, 255, 0.3);
+}
+
+/* SESSÃO FEATURES */
+.features{
+    text-align: center;
+    padding: 60px 40px;
+    background-color: #ffffff;
+}
+
+.features h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+}
+
+.featuresGrid{
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.featureCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+}
+
+.featureIcon{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featureIcon img{
+    height: 120px;
+    width: auto;
+}
+
+.featureCard p{
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* SESSÃO SOBRE */
+.sobre{
+    text-align: center;
+    padding: 40px 80px 60px;
+    background-color: #ffffff;
+    border-top: 1px solid #eee;
+}
+
+.sobre h2{
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+.sobre p{
+    font-size: 13px;
+    color: #444;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto 15px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer{
+    background-color: #0023ff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p{
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}

@@ -1,0 +1,548 @@
+/*
+========================================
+homepage.css
+Estilos do dashboard pós-login (homepage.php)
+========================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(0, 35, 255, 0.08) 0 120px, transparent 121px),
+        radial-gradient(circle at 88% 78%, rgba(123, 140, 255, 0.16) 0 160px, transparent 161px),
+        #fdfdfd;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #17204a;
+}
+
+h1, h2, h3, p, label {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+/* HEADER */
+.header-homepage {
+    background-color: #0023ff;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 56px;
+    border-bottom: 4px solid #7b8cff;
+    box-shadow: 0 8px 24px rgba(0, 35, 255, 0.18);
+    position: relative;
+    z-index: 2;
+}
+
+.header-esquerda {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 44px;
+    width: auto;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.tipo {
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    padding: 8px 14px;
+}
+
+#tipo-conta {
+    font-weight: 700;
+}
+
+.perfil {
+    width: auto;
+    height: auto;
+    position: relative;
+}
+
+.perfil-botao {
+    height: 45px;
+    width: 45px;
+    background: #fdfdfd;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+    color: #0023ff;
+    font-size: 25px;
+}
+
+.perfil-botao:hover {
+    background: #fdfdfd;
+    transform: scale(1.1);
+}
+
+.perfil-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 150px;
+    background: #fdfdfd;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(38, 38, 38, 0.22);
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+    z-index: 20;
+}
+
+.perfil-dropdown.active {
+    display: flex;
+}
+
+.perfil-dropdown a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #545454;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.perfil-dropdown a:hover {
+    background: #0023ff;
+    color: #fdfdfd;
+}
+
+/* MAIN */
+.main-homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    min-height: calc(100vh - 58px);
+    padding: 54px 32px 42px;
+    position: relative;
+}
+
+.actions-row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 34px;
+    width: min(100%, 990px);
+}
+
+/* CARDS */
+.criar-quiz,
+.entrar-sala {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 42%),
+        #0023ff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 410px;
+    min-height: 320px;
+    padding: 24px 44px 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    box-shadow: 0 18px 40px rgba(0, 35, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.criar-quiz::after,
+.entrar-sala::after {
+    content: "";
+    position: absolute;
+    right: -54px;
+    bottom: -62px;
+    width: 160px;
+    height: 160px;
+    border: 22px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+}
+
+.criar-quiz:hover,
+.entrar-sala:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 48px rgba(0, 35, 255, 0.26);
+}
+
+.card-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 20px;
+    background: #fdfdfd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    box-shadow: inset 0 0 0 2px rgba(123, 140, 255, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.card-icon img {
+    width: 54px;
+    height: 54px;
+    object-fit: contain;
+}
+
+.criar-quiz h1,
+.entrar-sala h1 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.criar-quiz p,
+.entrar-sala p {
+    font-size: 0.88rem;
+    line-height: 1.24;
+    opacity: 1;
+    max-width: 290px;
+    position: relative;
+    z-index: 1;
+}
+
+.criar-quiz p {
+    margin-bottom: auto;
+}
+
+/* FORMS */
+.entrar-formulario,
+.criar-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.entrar-formulario label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#pin-sala {
+    width: 100%;
+    max-width: 320px;
+    height: 42px;
+    border-radius: 50px;
+    border: 3px solid #9aa6ff;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 25px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #fdfdfd;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#pin-sala:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(127, 143, 255, 0.4);
+}
+
+#pin-sala::placeholder {
+    color: #999;
+}
+
+/* BOTÕES */
+.criar-botao,
+.entrar-formulario button {
+    background-color: #fdfdfd;
+    color: #0023ff;
+    border: 3px solid #7f8fff;
+    border-radius: 50px;
+    width: 220px;
+    height: 44px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.quizzes-criados {
+    width: min(100%, 990px);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0) 38%),
+        #0023ff;
+    border-radius: 24px;
+    padding: 24px 30px 26px;
+    color: #fdfdfd;
+    box-shadow: 0 18px 40px rgba(0, 35, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.quizzes-criados h2 {
+    text-align: left;
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.quizzes-criados h2::before {
+    content: "";
+    width: 14px;
+    height: 34px;
+    border-radius: 999px;
+    background: #fdfdfd;
+    display: inline-block;
+}
+
+.quizzes-scroll {
+    display: flex;
+    gap: 26px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 2px 10px;
+    scroll-snap-type: x proximity;
+}
+
+.quizzes-scroll::-webkit-scrollbar {
+    height: 9px;
+}
+
+.quizzes-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+}
+
+.quizzes-scroll::-webkit-scrollbar-thumb {
+    background: #fdfdfd;
+    border-radius: 999px;
+}
+
+.quiz-card {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+    padding: 6px;
+    border-radius: 24px;
+    transition: background 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.quiz-thumb {
+    width: 150px;
+    height: 120px;
+    background: linear-gradient(145deg, #6a6a6a, #474747);
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.quiz-thumb:hover {
+    background: linear-gradient(145deg, #555555, #3f3f3f);
+    transform: translateY(-3px);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+        0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.quiz-thumb::before {
+    content: "";
+    position: absolute;
+    width: 104px;
+    height: 84px;
+    background: #fdfdfd;
+    border-radius: 18px;
+}
+
+.quiz-thumb img {
+    width: 88px;
+    height: 88px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+    position: relative;
+    z-index: 1;
+}
+
+.quiz-card h3 {
+    margin-top: 12px;
+    color: #fdfdfd;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.quiz-card span {
+    display: block;
+    margin-top: 4px;
+    color: #0023ff;
+    background: #fdfdfd;
+    text-align: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: fit-content;
+    min-width: 72px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 4px 9px;
+    border-radius: 999px;
+}
+
+/* CÓDIGO DA SALA (entrar-quiz.php) */
+.codigo-sala {
+    margin: 12px 0;
+    background: rgba(255,255,255,0.13);
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.18);
+    text-align: center;
+}
+.codigo-sala strong {
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+.codigo-destaque {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    background: #fdfdfd;
+    color: #0023ff;
+    padding: 4px 18px;
+    border-radius: 999px;
+}
+
+/* BOTÃO INICIAR NOS CARDS DE QUIZ */
+.quiz-start-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 18px;
+    background: #00c76a;
+    color: #fff;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.quiz-start-btn:hover {
+    background: #00a85a;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.criar-botao:hover,
+.entrar-formulario button:hover {
+    background-color: #0023ff;
+    color: white;
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.3);
+}
+
+.criar-botao:active,
+.entrar-formulario button:active {
+    transform: scale(0.98);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .main-homepage {
+        padding: 34px 18px;
+    }
+
+    .actions-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .criar-quiz,
+    .entrar-sala {
+        width: 100%;
+        max-width: 420px;
+    }
+
+    .header-homepage {
+        padding: 0 20px;
+    }
+
+    .tipo {
+        font-size: 12px;
+    }
+
+    .quizzes-criados {
+        padding: 20px 18px 24px;
+    }
+}
